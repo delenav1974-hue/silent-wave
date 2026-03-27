@@ -469,6 +469,112 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Schedule */
+        .schedule {
+            background: var(--color-bg);
+            border-top: var(--border-thin);
+        }
+
+        .schedule-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .event-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--color-surface);
+            border: var(--border-thin);
+            border-radius: 1rem;
+            padding: 1.5rem 2rem;
+            transition: var(--transition);
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            background: var(--color-surface-hover);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .event-date {
+            text-align: center;
+            min-width: 80px;
+            padding-right: 2rem;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .event-date .day {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-text);
+            line-height: 1;
+        }
+
+        .event-date .month {
+            color: var(--color-neon-purple);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .event-info {
+            flex-grow: 1;
+            padding: 0 2rem;
+        }
+
+        .event-tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: rgba(166, 0, 255, 0.1);
+            color: var(--color-neon-purple);
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .event-info p {
+            font-size: 0.95rem;
+            margin: 0;
+            color: var(--color-text-muted);
+        }
+
+        .btn-sm {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .event-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+                padding: 1.5rem;
+            }
+
+            .event-date {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                padding-right: 0;
+                padding-bottom: 1rem;
+            }
+
+            .event-info {
+                padding: 0;
+            }
+        }
+
         /* FAQ */
         .faq-item {
             border-bottom: var(--border-thin);
@@ -693,6 +799,7 @@
             <ul class="nav-links">
                 <li><a href="#about">О формате</a></li>
                 <li><a href="#services">Услуги</a></li>
+                <li><a href="#schedule">Расписание</a></li>
                 <li><a href="#faq">Вопросы</a></li>
             </ul>
             <div class="nav-cta">
@@ -888,6 +995,80 @@
         </div>
     </section>
 
+    <!-- Schedule & Booking -->
+    <section id="schedule" class="schedule">
+        <div class="container">
+            <h2 class="reveal text-center" style="text-align: center;">Ближайшие <span class="text-neon">События</span>
+            </h2>
+            <p class="reveal" style="text-align: center; max-width: 600px; margin: 0 auto 4rem;">Выберите формат, дату и
+                забронируйте своё место. Количество наушников ограничено.</p>
+
+            <div class="schedule-grid reveal">
+                <!-- Event 1 -->
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">15</span>
+                        <span class="month">Авг</span>
+                    </div>
+                    <div class="event-info">
+                        <span class="event-tag">Ecstatic Dance</span>
+                        <h3>Вечерняя практика на крыше</h3>
+                        <p>Глубокое погружение в себя под живые сеты проводника. Возьмите удобную одежду.</p>
+                    </div>
+                    <div class="event-action">
+                        <a href="https://t.me/silentwaveeu" target="_blank"
+                            class="btn btn-primary btn-sm">Записаться</a>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">22</span>
+                        <span class="month">Авг</span>
+                    </div>
+                    <div class="event-info">
+                        <span class="event-tag"
+                            style="background: rgba(212, 0, 255, 0.1); color: var(--color-neon-blue);">Silent
+                            Disco</span>
+                        <h3>Neon Glow Party</h3>
+                        <p>Три независимых диджея, неоновый дресс-код и полный отрыв на закрытой локации.</p>
+                    </div>
+                    <div class="event-action">
+                        <a href="https://t.me/silentwaveeu" target="_blank" class="btn btn-primary btn-sm">Купить
+                            билет</a>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">29</span>
+                        <span class="month">Авг</span>
+                    </div>
+                    <div class="event-info">
+                        <span class="event-tag"
+                            style="background: rgba(247, 0, 255, 0.1); color: var(--color-neon-yellow);">Аудио-прогулка</span>
+                        <h3>Иммерсивный квест "Тайны"</h3>
+                        <p>Знакомство с городом через саунд-дизайн и голос диктора-гида.</p>
+                    </div>
+                    <div class="event-action">
+                        <a href="https://t.me/silentwaveeu" target="_blank"
+                            class="btn btn-primary btn-sm">Записаться</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal"
+                style="margin-top: 3rem; text-align: center; background: var(--color-surface); padding: 2rem; border-radius: var(--border-radius); border: var(--border-thin);">
+                <h3 style="margin-bottom: 1rem;">Хотите свой собственный формат?</h3>
+                <p style="margin-bottom: 1.5rem; color: var(--color-text-muted);">Организуем частное мероприятие в
+                    формате Silent Wave (корпоратив, день рождения, свадьба) в любой точке города.</p>
+                <a href="#contacts" class="btn btn-secondary">Заказать под ключ</a>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ -->
     <section id="faq" style="background: var(--color-surface);">
         <div class="container" style="max-width: 800px;">
@@ -973,7 +1154,7 @@
                     <ul class="footer-links">
                         <li><a href="#about">О формате</a></li>
                         <li><a href="#services">Наши услуги</a></li>
-                        <li><a href="#problems">В чем польза</a></li>
+                        <li><a href="#schedule">Расписание</a></li>
                         <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
