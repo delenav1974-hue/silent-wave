@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SILENT WAVE - Организация премиальных Silent Disco, Ecstatic Dance и иммерсивных аудио-событий.">
+    <title>SILENT WAVE | Новое измерение звука</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-bg: #030305;
+            --color-surface: rgba(20, 20, 25, 0.6);
+            --color-surface-hover: rgba(30, 30, 38, 0.8);
+            --color-text: #F8F9FA;
+            --color-text-muted: #A0AEC0;
+            
+            --color-neon-purple: #9D4EDD;
+            --color-neon-blue: #00F0FF;
+            --color-neon-yellow: #E1FF00;
+            
+            --font-display: 'Syne', sans-serif;
+            --font-body: 'Onest', sans-serif;
+            
+            --border-radius: 1.5rem;
+            --border-thin: 1px solid rgba(255, 255, 255, 0.08);
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            line-height: 1.1;
+        }
+
+        h1 { font-size: clamp(3rem, 8vw, 6rem); font-weight: 800; letter-spacing: -0.02em; }
+        h2 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; margin-bottom: 2rem; }
+        h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
+        p { font-size: 1.125rem; color: var(--color-text-muted); }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 8rem 0;
+            position: relative;
+        }
+
+        .text-neon {
+            background: linear-gradient(90deg, var(--color-neon-blue), var(--color-neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .glow-bg {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem 2.5rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 1.125rem;
+            border-radius: 3rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--color-neon-yellow);
+            color: #000;
+            box-shadow: 0 0 20px rgba(225, 255, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(225, 255, 0, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--color-text);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 1.5rem 0;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background: rgba(3, 3, 5, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: var(--border-thin);
+            padding: 1rem 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-text);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-text);
+        }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .nav-phone {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .nav-phone:hover {
+            color: var(--color-neon-blue);
+        }
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 6rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(157, 78, 221, 0.15) 0%, transparent 50%),
+                url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=2070&auto=format&fit=crop') center/cover;
+            opacity: 0.3;
+            z-index: -2;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 1;
+        }
+
+        .hero p {
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            margin: 2rem auto 3rem;
+            max-width: 700px;
+            color: #E2E8F0;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        /* Problems (Pain Points) */
+        .problems {
+            background: #050508;
+            border-top: var(--border-thin);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .card {
+            background: var(--color-surface);
+            border: var(--border-thin);
+            border-radius: var(--border-radius);
+            padding: 3rem 2rem;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 100%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: var(--color-surface-hover);
+        }
+
+        .card:hover::before { opacity: 1; }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        /* Solution / Magic */
+        .solution {
+            position: relative;
+        }
+
+        .solution-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .solution-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .solution-image img {
+            width: 100%;
+            height: auto;
+            transform: scale(1.05);
+            transition: transform 0.8s ease;
+        }
+
+        .solution-image:hover img {
+            transform: scale(1);
+        }
+
+        .solution-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+        }
+
+        /* Benefits */
+        .benefits-grid {
+            margin-top: 4rem;
+        }
+
+        .benefit-card {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            padding: 2.5rem;
+            background: linear-gradient(90deg, var(--color-surface) 0%, transparent 100%);
+            border-left: 2px solid var(--color-neon-blue);
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover {
+            border-left-color: var(--color-neon-purple);
+            background: linear-gradient(90deg, rgba(30,30,38,0.9) 0%, transparent 100%);
+            transform: translateX(10px);
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 240, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-neon-blue);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        /* Services */
+        .services {
+            background: #020203;
+        }
+
+        .service-card {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2.5rem;
+            text-decoration: none;
+            color: white;
+            group: group;
+        }
+
+        .service-card img {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            transition: transform 0.7s ease;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%);
+            z-index: 1;
+        }
+
+        .service-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-content h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .service-card:hover h3 {
+            color: var(--color-neon-yellow);
+        }
+
+        /* Social Proof / Metrics */
+        .metrics {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+            text-align: center;
+            margin-bottom: 6rem;
+            padding: 3rem;
+            background: var(--color-surface);
+            border: var(--border-thin);
+            border-radius: var(--border-radius);
+        }
+
+        .metric strong {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            color: var(--color-text);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: var(--border-thin);
+            padding: 2rem 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .faq-icon {
+            font-size: 2rem;
+            color: var(--color-neon-blue);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            color: var(--color-text-muted);
+        }
+
+        .faq-answer p {
+            padding-top: 1.5rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(180deg, transparent 0%, rgba(157, 78, 221, 0.1) 100%);
+            border-top: var(--border-thin);
+            border-bottom: var(--border-thin);
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            display: block;
+            text-decoration: none;
+            color: white;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-neon-yellow);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: var(--border-thin);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Mobile Nav & Sticky CTA */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .sticky-mobile-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(3, 3, 5, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            z-index: 99;
+            border-top: var(--border-thin);
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .solution-content { grid-template-columns: 1fr; gap: 3rem; }
+            .solution-image { order: -1; }
+            .hero h1 { font-size: 4rem; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, .nav-cta .btn { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero-btns { flex-direction: column; width: 100%; padding: 0 1rem; }
+            .hero-btns .btn { width: 100%; }
+            .grid-3 { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .metric { width: 45%; }
+            
+            section { padding: 5rem 0; }
+            .sticky-mobile-cta { display: block; }
+            body { padding-bottom: 80px; } /* for sticky cta */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">SILENT WAVE</a>
+            <ul class="nav-links">
+                <li><a href="#about">О формате</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#faq">Вопросы</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="tel:+359879367040" class="nav-phone">+359 87 936 7040</a>
+                <a href="#contacts" class="btn btn-secondary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">Оставить заявку</a>
+                <button class="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="glow-bg" style="width: 600px; height: 600px; background: var(--color-neon-purple); top: 10%; right: 10%;"></div>
+        <div class="glow-bg" style="width: 500px; height: 500px; background: var(--color-neon-blue); bottom: -10%; left: -10%;"></div>
+        
+        <div class="container hero-content">
+            <h1 class="reveal">Освободи звук.<br><span class="text-neon">Погрузись в момент.</span></h1>
+            <p class="reveal" style="transition-delay: 0.1s;">Организация премиальных Silent Disco, Ecstatic Dance и иммерсивных аудио-событий. Ваш ритм. Ваши правила. Любая локация без ограничений по шуму.</p>
+            <div class="hero-btns reveal" style="transition-delay: 0.2s;">
+                <a href="#services" class="btn btn-primary">Посмотреть форматы</a>
+                <a href="#contacts" class="btn btn-secondary">Связаться с нами</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems -->
+    <section id="problems" class="problems">
+        <div class="container">
+            <h2 class="reveal">Почему стандартные форматы <span class="text-neon">больше не работают?</span></h2>
+            
+            <div class="grid-3">
+                <div class="card reveal" style="transition-delay: 0.1s;">
+                    <span class="card-icon">🔇</span>
+                    <h3>Ограничения и соседи</h3>
+                    <p>Вынуждены заканчивать вечеринку или делать звук тише в 23:00? Отказываетесь от красивых открытых локаций из-за запрета на шум?</p>
+                </div>
+                <div class="card reveal" style="transition-delay: 0.2s;">
+                    <span class="card-icon">🎭</span>
+                    <h3>Разные вкусы у гостей</h3>
+                    <p>Сложно угодить всем: пока одни хотят танцевать под техно, другие скучают по хитам 2000-х. Танцпол разбивается.</p>
+                </div>
+                <div class="card reveal" style="transition-delay: 0.3s;">
+                    <span class="card-icon">🥱</span>
+                    <h3>Обыденность</h3>
+                    <p>Люди устали от одинаковых сценариев корпоративов и свадеб. Им нужен новый опыт, который заставит сказать «ВАУ».</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution / Magic -->
+    <section id="about" class="solution">
+        <div class="glow-bg" style="width: 400px; height: 400px; background: var(--color-neon-blue); top: 20%; left: 5%;"></div>
+        <div class="container solution-content">
+            <div class="solution-text reveal">
+                <h2>Будущее ивентов <br><span class="text-neon">звучит иначе</span></h2>
+                <p style="margin-bottom: 1.5rem;">Формат Silent Wave перестраивает правила. Мы выдаем гостям премиальные Hi-Fi наушники с активным глубоким звучанием.</p>
+                <p style="margin-bottom: 2.5rem;"><strong>3 независимых канала. 3 разных диджея или плейлиста.</strong> Каждый гость сам выбирает свой цвет на наушниках (Синий, Красный или Зеленый) и свой музыкальный вайб.</p>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🎧</div>
+                        <div>
+                            <h4>Глубокая иммерсивность</h4>
+                            <p style="font-size: 0.95rem; margin-top: 0.5rem;">Наушники отсекают разговоры и шум, оставляя вас один на один с музыкой и атмосферой единения.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🌆</div>
+                        <div>
+                            <h4>Свобода локаций</h4>
+                            <p style="font-size: 0.95rem; margin-top: 0.5rem;">Проводите фестивали на пляже, крыше бизнес-центра, в офисе или в лесу без единой жалобы на шум.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-image reveal" style="transition-delay: 0.2s;">
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974&auto=format&fit=crop" alt="Silent Disco Party - гости в наушниках">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="reveal text-center" style="text-align: center;">Наши <span class="text-neon">Форматы</span></h2>
+            <p class="reveal" style="text-align: center; max-width: 600px; margin: 0 auto 4rem;">От корпоративных вечеринок до глубоких медитативных практик. Мы подберем решение под ваши задачи.</p>
+
+            <div class="grid-3">
+                <a href="#contacts" class="service-card reveal" style="transition-delay: 0.1s;">
+                    <img src="https://images.unsplash.com/photo-1544785349-c4a5301826fd?q=80&w=2070&auto=format&fit=crop" alt="Silent Disco">
+                    <div class="service-content">
+                        <h3>Silent Disco Party</h3>
+                        <p>Взрывные корпоративы, дни рождения и фестивали со сценариями взаимодействия гостей.</p>
+                        <span style="color: var(--color-neon-yellow); font-weight: bold; margin-top: 1rem; display: inline-block;">Организовать →</span>
+                    </div>
+                </a>
+                
+                <a href="#contacts" class="service-card reveal" style="transition-delay: 0.2s;">
+                    <img src="https://images.unsplash.com/photo-1518002171953-a080ee817e1f?q=80&w=2070&auto=format&fit=crop" alt="Ecstatic Dance">
+                    <div class="service-content">
+                        <h3>Ecstatic & Практики</h3>
+                        <p>Идеальная изоляция звука для проводников йоги, медитаций и свободного танца Ecstatic Dance.</p>
+                        <span style="color: var(--color-neon-yellow); font-weight: bold; margin-top: 1rem; display: inline-block;">Узнать больше →</span>
+                    </div>
+                </a>
+
+                <a href="#contacts" class="service-card reveal" style="transition-delay: 0.3s;">
+                    <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=2070&auto=format&fit=crop" alt="Audio Walks">
+                    <div class="service-content">
+                        <h3>Иммерсивные прогулки</h3>
+                        <p>Аудио-экскурсии, квесты по городу и тимбилдинги с полным погружением в историю.</p>
+                        <span style="color: var(--color-neon-yellow); font-weight: bold; margin-top: 1rem; display: inline-block;">Создать маршрут →</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="metrics reveal">
+                <div class="metric">
+                    <strong>50+</strong>
+                    <p>Проведенных событий</p>
+                </div>
+                <div class="metric">
+                    <strong>1000+</strong>
+                    <p>Счастливых гостей</p>
+                </div>
+                <div class="metric">
+                    <strong>3</strong>
+                    <p>Музыкальных канала</p>
+                </div>
+                <div class="metric">
+                    <strong>100%</strong>
+                    <p>Отсутствие жалоб на шум</p>
+                </div>
+            </div>
+
+            <h2 class="reveal text-center" style="text-align: center;">Что говорят <span class="text-neon">клиенты</span></h2>
+            
+            <div class="grid-3" style="margin-top: 3rem;">
+                <div class="card reveal" style="padding: 2rem;">
+                    <div style="color: var(--color-neon-yellow); font-size: 1.2rem; margin-bottom: 1rem;">★★★★★</div>
+                    <p style="color: var(--color-text); font-style: italic; margin-bottom: 1.5rem;">"Это совершенно другой уровень корпоратива. Наши сотрудники разбились на лагеря по цветам каналов и устроили танцевальный баттл. Лучшее, что мы делали за 5 лет!"</p>
+                    <div style="font-weight: 600;">Анна, HR Director</div>
+                </div>
+                <div class="card reveal" style="padding: 2rem; transition-delay: 0.1s;">
+                    <div style="color: var(--color-neon-yellow); font-size: 1.2rem; margin-bottom: 1rem;">★★★★★</div>
+                    <p style="color: var(--color-text); font-style: italic; margin-bottom: 1.5rem;">"Как организатор Ecstatic Dance, я всегда боролась с акустикой залов. В наушниках люди моментально абстрагируются от соседей и погружаются в процесс."</p>
+                    <div style="font-weight: 600;">Елена, Проводник</div>
+                </div>
+                <div class="card reveal" style="padding: 2rem; transition-delay: 0.2s;">
+                    <div style="color: var(--color-neon-yellow); font-size: 1.2rem; margin-bottom: 1rem;">★★★★★</div>
+                    <p style="color: var(--color-text); font-style: italic; margin-bottom: 1.5rem;">"Мы устроили вечеринку прямо на пляже отеля вечером. Никому не мешали, слушали глубокий хаус, звук кристальный. Оборудование работало идеально весь вечер."</p>
+                    <div style="font-weight: 600;">Максим, Event-менеджер</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" style="background: var(--color-surface);">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="reveal text-center" style="text-align: center; margin-bottom: 4rem;">Частые <span class="text-neon">вопросы</span></h2>
+            
+            <div class="faq-list reveal">
+                <div class="faq-item">
+                    <div class="faq-question">А наушники не спадут во время активного танца? <span class="faq-icon">+</span></div>
+                    <div class="faq-answer"><p>Они спроектированы специально для активных движений, плотно прилегают к ушам и весят всего около 200 грамм. Даже при Ecstatic Dance они остаются на месте.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">На сколько хватает заряда? <span class="faq-icon">+</span></div>
+                    <div class="faq-answer"><p>Встроенные аккумуляторы обеспечивают до 10-12 часов непрерывного интенсивного звучания. Хватит на вечеринку любой продолжительности от заката до рассвета.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Как далеко пробивает сигнал передатчика? <span class="faq-icon">+</span></div>
+                    <div class="faq-answer"><p>Радиус действия сигнала составляет до 100-150 метров. Вы можете свободно перемещаться по большой территории, уйти к бару или на другой конец локации, не теряя связи с музыкой.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Нужен ли интернет для работы? <span class="faq-icon">+</span></div>
+                    <div class="faq-answer"><p>Нет! Система работает по собственному радиоканалу (UHF). Вы можете воспроизводить звук оффлайн откуда угодно: напрямую с DJ-пульта, ноутбука или телефона.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Как работает аренда оборудования "под ключ"? <span class="faq-icon">+</span></div>
+                    <div class="faq-answer"><p>Мы привозим заряженные наушники, подключаем наши передатчики к вашим источникам звука (или приглашаем своих диджеев), курируем процесс на площадке и забираем оборудование после окончания. Вы просто наслаждаетесь.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contacts" class="cta-section">
+        <div class="glow-bg" style="width: 700px; height: 700px; background: var(--color-neon-purple); top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.2;"></div>
+        <div class="container cta-content reveal">
+            <h2>Ваше лучшее мероприятие <br><span class="text-neon">начинается здесь</span></h2>
+            <p style="font-size: 1.25rem; margin-bottom: 3rem; color: white;">Свяжитесь с нами, и мы соберем индивидуальную концепцию вашего события под ключ за 24 часа. Свободные даты бронируются быстро.</p>
+            
+            <div style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 400px; margin: 0 auto; background: var(--color-surface); padding: 3rem; border-radius: var(--border-radius); border: var(--border-thin);">
+                <a href="tel:+359879367040" class="btn btn-primary" style="width: 100%;">Позвонить: +359 87 936 7040</a>
+                <a href="https://t.me/silentwaveeu" target="_blank" class="btn btn-secondary" style="width: 100%; border-color: rgba(0, 240, 255, 0.3);">Написать в Telegram</a>
+                <a href="mailto:info@silentwave.eu" style="color: var(--color-text-muted); text-decoration: none; margin-top: 1rem;">info@silentwave.eu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="footer-logo">SILENT WAVE</a>
+                    <p style="max-width: 300px; margin-bottom: 1.5rem;">Мы конструируем аудио-пространства, давая людям возможность чувствовать музыку свободно и без ограничений.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Навигация</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">О формате</a></li>
+                        <li><a href="#services">Наши услуги</a></li>
+                        <li><a href="#problems">В чем польза</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+359879367040" style="color: white; font-weight: 500;">+359 87 936 7040</a></li>
+                        <li><a href="mailto:info@silentwave.eu">info@silentwave.eu</a></li>
+                        <li style="margin-top: 1rem;"><a href="https://t.me/silentwaveeu" target="_blank" class="text-neon">Telegram: @silentwaveeu</a></li>
+                        <li><a href="#" target="_blank">Instagram</a></li>
+                        <li><a href="#" target="_blank">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SILENT WAVE. Все права защищены.</p>
+                <p>Designed for premium experience.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA -->
+    <div class="sticky-mobile-cta">
+        <a href="tel:+359879367040" class="btn btn-primary" style="width: 100%; padding: 0.8rem;">Позвонить Сейчас</a>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all
+                faqItems.forEach(faq => {
+                    faq.classList.remove('active');
+                    faq.querySelector('.faq-answer').style.maxHeight = null;
+                });
+
+                // Set active flag logic
+                if (!isActive) {
+                    item.classList.add('active');
+                    const answer = item.querySelector('.faq-answer');
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                }
+            });
+        });
+
+        // Reveal Animations on Scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+
+        revealElements.forEach(el => {
+            revealOnScroll.observe(el);
+        });
+    </script>
+</body>
+</html>
