@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SILENT WAVE - Организация премиальных Silent Disco, Ecstatic Dance и иммерсивных аудио-событий.">
+    <meta name="description"
+        content="SILENT WAVE - Организация премиальных Silent Disco, Ecstatic Dance и иммерсивных аудио-событий.">
     <title>SILENT WAVE | Новое измерение звука</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700&family=Syne:wght@500;700;800&display=swap"
+        rel="stylesheet">
 
     <style>
         :root {
-            --color-bg: #030305;
-            --color-surface: rgba(20, 20, 25, 0.6);
-            --color-surface-hover: rgba(30, 30, 38, 0.8);
+            --color-bg: #1c0529;
+            --color-surface: rgba(49, 10, 75, 0.6);
+            --color-surface-hover: rgba(75, 15, 115, 0.8);
             --color-text: #F8F9FA;
-            --color-text-muted: #A0AEC0;
-            
-            --color-neon-purple: #9D4EDD;
-            --color-neon-blue: #00F0FF;
-            --color-neon-yellow: #E1FF00;
-            
+            --color-text-muted: #d5addb;
+
+            --color-neon-purple: #a600ff;
+            --color-neon-blue: #d400ff;
+            --color-neon-yellow: #f700ff;
+
             --font-display: 'Syne', sans-serif;
             --font-body: 'Onest', sans-serif;
-            
+
             --border-radius: 1.5rem;
             --border-thin: 1px solid rgba(255, 255, 255, 0.08);
             --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -50,15 +54,36 @@
         }
 
         /* Typography */
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             font-family: var(--font-display);
             line-height: 1.1;
         }
 
-        h1 { font-size: clamp(3rem, 8vw, 6rem); font-weight: 800; letter-spacing: -0.02em; }
-        h2 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; margin-bottom: 2rem; }
-        h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
-        p { font-size: 1.125rem; color: var(--color-text-muted); }
+        h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.125rem;
+            color: var(--color-text-muted);
+        }
 
         /* Utility Classes */
         .container {
@@ -107,12 +132,12 @@
         .btn-primary {
             background: var(--color-neon-yellow);
             color: #000;
-            box-shadow: 0 0 20px rgba(225, 255, 0, 0.2);
+            box-shadow: 0 0 20px rgba(247, 0, 255, 0.4);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 10px 30px rgba(225, 255, 0, 0.4);
+            box-shadow: 0 10px 30px rgba(247, 0, 255, 0.6);
         }
 
         .btn-secondary {
@@ -139,7 +164,7 @@
         }
 
         header.scrolled {
-            background: rgba(3, 3, 5, 0.85);
+            background: rgba(28, 5, 41, 0.85);
             backdrop-filter: blur(20px);
             border-bottom: var(--border-thin);
             padding: 1rem 0;
@@ -183,13 +208,14 @@
             align-items: center;
             gap: 1.5rem;
         }
-        
+
         .nav-phone {
             color: var(--color-text);
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition);
         }
+
         .nav-phone:hover {
             color: var(--color-neon-blue);
         }
@@ -210,8 +236,11 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: 
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
                 radial-gradient(circle at 50% 50%, rgba(157, 78, 221, 0.15) 0%, transparent 50%),
                 url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=2070&auto=format&fit=crop') center/cover;
             opacity: 0.3;
@@ -238,7 +267,7 @@
 
         /* Problems (Pain Points) */
         .problems {
-            background: #050508;
+            background: #250736;
             border-top: var(--border-thin);
         }
 
@@ -263,8 +292,11 @@
         .card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 100%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
             opacity: 0;
             transition: var(--transition);
         }
@@ -275,7 +307,9 @@
             background: var(--color-surface-hover);
         }
 
-        .card:hover::before { opacity: 1; }
+        .card:hover::before {
+            opacity: 1;
+        }
 
         .card-icon {
             font-size: 2.5rem;
@@ -316,7 +350,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
         }
 
         /* Benefits */
@@ -338,7 +372,7 @@
 
         .benefit-card:hover {
             border-left-color: var(--color-neon-purple);
-            background: linear-gradient(90deg, rgba(30,30,38,0.9) 0%, transparent 100%);
+            background: linear-gradient(90deg, rgba(30, 30, 38, 0.9) 0%, transparent 100%);
             transform: translateX(10px);
         }
 
@@ -357,7 +391,7 @@
 
         /* Services */
         .services {
-            background: #020203;
+            background: #150320;
         }
 
         .service-card {
@@ -376,7 +410,10 @@
 
         .service-card img {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             z-index: 0;
             transition: transform 0.7s ease;
@@ -386,7 +423,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
             z-index: 1;
         }
 
@@ -484,7 +521,7 @@
 
         /* Footer */
         footer {
-            background: #000;
+            background: #11021a;
             padding: 4rem 0 2rem;
         }
 
@@ -515,7 +552,7 @@
         .footer-links {
             list-style: none;
         }
-        
+
         .footer-links li {
             margin-bottom: 1rem;
         }
@@ -536,7 +573,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: rgba(255,255,255,0.4);
+            color: rgba(255, 255, 255, 0.4);
             font-size: 0.9rem;
         }
 
@@ -551,7 +588,7 @@
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         /* Mobile Nav & Sticky CTA */
         .mobile-menu-btn {
             display: none;
@@ -561,14 +598,14 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
-        
+
         .sticky-mobile-cta {
             display: none;
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            background: rgba(3, 3, 5, 0.95);
+            background: rgba(28, 5, 41, 0.95);
             backdrop-filter: blur(10px);
             padding: 1rem;
             z-index: 99;
@@ -578,27 +615,75 @@
 
         /* Responsive */
         @media (max-width: 992px) {
-            .solution-content { grid-template-columns: 1fr; gap: 3rem; }
-            .solution-image { order: -1; }
-            .hero h1 { font-size: 4rem; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .solution-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .solution-image {
+                order: -1;
+            }
+
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         @media (max-width: 768px) {
-            .nav-links, .nav-cta .btn { display: none; }
-            .mobile-menu-btn { display: block; }
-            .hero-btns { flex-direction: column; width: 100%; padding: 0 1rem; }
-            .hero-btns .btn { width: 100%; }
-            .grid-3 { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .metric { width: 45%; }
-            
-            section { padding: 5rem 0; }
-            .sticky-mobile-cta { display: block; }
-            body { padding-bottom: 80px; } /* for sticky cta */
+
+            .nav-links,
+            .nav-cta .btn {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                width: 100%;
+                padding: 0 1rem;
+            }
+
+            .hero-btns .btn {
+                width: 100%;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .metric {
+                width: 45%;
+            }
+
+            section {
+                padding: 5rem 0;
+            }
+
+            .sticky-mobile-cta {
+                display: block;
+            }
+
+            body {
+                padding-bottom: 80px;
+            }
+
+            /* for sticky cta */
         }
     </style>
 </head>
+
 <body>
 
     <!-- Header -->
@@ -612,7 +697,8 @@
             </ul>
             <div class="nav-cta">
                 <a href="tel:+359879367040" class="nav-phone">+359 87 936 7040</a>
-                <a href="#contacts" class="btn btn-secondary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">Оставить заявку</a>
+                <a href="#contacts" class="btn btn-secondary"
+                    style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">Оставить заявку</a>
                 <button class="mobile-menu-btn">☰</button>
             </div>
         </div>
@@ -620,12 +706,15 @@
 
     <!-- Hero -->
     <section class="hero">
-        <div class="glow-bg" style="width: 600px; height: 600px; background: var(--color-neon-purple); top: 10%; right: 10%;"></div>
-        <div class="glow-bg" style="width: 500px; height: 500px; background: var(--color-neon-blue); bottom: -10%; left: -10%;"></div>
-        
+        <div class="glow-bg"
+            style="width: 600px; height: 600px; background: var(--color-neon-purple); top: 10%; right: 10%;"></div>
+        <div class="glow-bg"
+            style="width: 500px; height: 500px; background: var(--color-neon-blue); bottom: -10%; left: -10%;"></div>
+
         <div class="container hero-content">
             <h1 class="reveal">Освободи звук.<br><span class="text-neon">Погрузись в момент.</span></h1>
-            <p class="reveal" style="transition-delay: 0.1s;">Организация премиальных Silent Disco, Ecstatic Dance и иммерсивных аудио-событий. Ваш ритм. Ваши правила. Любая локация без ограничений по шуму.</p>
+            <p class="reveal" style="transition-delay: 0.1s;">Организация премиальных Silent Disco, Ecstatic Dance и
+                иммерсивных аудио-событий. Ваш ритм. Ваши правила. Любая локация без ограничений по шуму.</p>
             <div class="hero-btns reveal" style="transition-delay: 0.2s;">
                 <a href="#services" class="btn btn-primary">Посмотреть форматы</a>
                 <a href="#contacts" class="btn btn-secondary">Связаться с нами</a>
@@ -637,22 +726,25 @@
     <section id="problems" class="problems">
         <div class="container">
             <h2 class="reveal">Почему стандартные форматы <span class="text-neon">больше не работают?</span></h2>
-            
+
             <div class="grid-3">
                 <div class="card reveal" style="transition-delay: 0.1s;">
                     <span class="card-icon">🔇</span>
                     <h3>Ограничения и соседи</h3>
-                    <p>Вынуждены заканчивать вечеринку или делать звук тише в 23:00? Отказываетесь от красивых открытых локаций из-за запрета на шум?</p>
+                    <p>Вынуждены заканчивать вечеринку или делать звук тише в 23:00? Отказываетесь от красивых открытых
+                        локаций из-за запрета на шум?</p>
                 </div>
                 <div class="card reveal" style="transition-delay: 0.2s;">
                     <span class="card-icon">🎭</span>
                     <h3>Разные вкусы у гостей</h3>
-                    <p>Сложно угодить всем: пока одни хотят танцевать под техно, другие скучают по хитам 2000-х. Танцпол разбивается.</p>
+                    <p>Сложно угодить всем: пока одни хотят танцевать под техно, другие скучают по хитам 2000-х. Танцпол
+                        разбивается.</p>
                 </div>
                 <div class="card reveal" style="transition-delay: 0.3s;">
                     <span class="card-icon">🥱</span>
                     <h3>Обыденность</h3>
-                    <p>Люди устали от одинаковых сценариев корпоративов и свадеб. Им нужен новый опыт, который заставит сказать «ВАУ».</p>
+                    <p>Люди устали от одинаковых сценариев корпоративов и свадеб. Им нужен новый опыт, который заставит
+                        сказать «ВАУ».</p>
                 </div>
             </div>
         </div>
@@ -660,32 +752,39 @@
 
     <!-- Solution / Magic -->
     <section id="about" class="solution">
-        <div class="glow-bg" style="width: 400px; height: 400px; background: var(--color-neon-blue); top: 20%; left: 5%;"></div>
+        <div class="glow-bg"
+            style="width: 400px; height: 400px; background: var(--color-neon-blue); top: 20%; left: 5%;"></div>
         <div class="container solution-content">
             <div class="solution-text reveal">
                 <h2>Будущее ивентов <br><span class="text-neon">звучит иначе</span></h2>
-                <p style="margin-bottom: 1.5rem;">Формат Silent Wave перестраивает правила. Мы выдаем гостям премиальные Hi-Fi наушники с активным глубоким звучанием.</p>
-                <p style="margin-bottom: 2.5rem;"><strong>3 независимых канала. 3 разных диджея или плейлиста.</strong> Каждый гость сам выбирает свой цвет на наушниках (Синий, Красный или Зеленый) и свой музыкальный вайб.</p>
-                
+                <p style="margin-bottom: 1.5rem;">Формат Silent Wave перестраивает правила. Мы выдаем гостям премиальные
+                    Hi-Fi наушники с активным глубоким звучанием.</p>
+                <p style="margin-bottom: 2.5rem;"><strong>3 независимых канала. 3 разных диджея или плейлиста.</strong>
+                    Каждый гость сам выбирает свой цвет на наушниках (Синий, Красный или Зеленый) и свой музыкальный
+                    вайб.</p>
+
                 <div class="benefits-grid">
                     <div class="benefit-card">
                         <div class="benefit-icon">🎧</div>
                         <div>
                             <h4>Глубокая иммерсивность</h4>
-                            <p style="font-size: 0.95rem; margin-top: 0.5rem;">Наушники отсекают разговоры и шум, оставляя вас один на один с музыкой и атмосферой единения.</p>
+                            <p style="font-size: 0.95rem; margin-top: 0.5rem;">Наушники отсекают разговоры и шум,
+                                оставляя вас один на один с музыкой и атмосферой единения.</p>
                         </div>
                     </div>
                     <div class="benefit-card">
                         <div class="benefit-icon">🌆</div>
                         <div>
                             <h4>Свобода локаций</h4>
-                            <p style="font-size: 0.95rem; margin-top: 0.5rem;">Проводите фестивали на пляже, крыше бизнес-центра, в офисе или в лесу без единой жалобы на шум.</p>
+                            <p style="font-size: 0.95rem; margin-top: 0.5rem;">Проводите фестивали на пляже, крыше
+                                бизнес-центра, в офисе или в лесу без единой жалобы на шум.</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="solution-image reveal" style="transition-delay: 0.2s;">
-                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974&auto=format&fit=crop" alt="Silent Disco Party - гости в наушниках">
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974&auto=format&fit=crop"
+                    alt="Silent Disco Party - гости в наушниках">
             </div>
         </div>
     </section>
@@ -694,33 +793,44 @@
     <section id="services" class="services">
         <div class="container">
             <h2 class="reveal text-center" style="text-align: center;">Наши <span class="text-neon">Форматы</span></h2>
-            <p class="reveal" style="text-align: center; max-width: 600px; margin: 0 auto 4rem;">От корпоративных вечеринок до глубоких медитативных практик. Мы подберем решение под ваши задачи.</p>
+            <p class="reveal" style="text-align: center; max-width: 600px; margin: 0 auto 4rem;">От корпоративных
+                вечеринок до глубоких медитативных практик. Мы подберем решение под ваши задачи.</p>
 
             <div class="grid-3">
                 <a href="#contacts" class="service-card reveal" style="transition-delay: 0.1s;">
-                    <img src="https://images.unsplash.com/photo-1544785349-c4a5301826fd?q=80&w=2070&auto=format&fit=crop" alt="Silent Disco">
+                    <img src="https://images.unsplash.com/photo-1544785349-c4a5301826fd?q=80&w=2070&auto=format&fit=crop"
+                        alt="Silent Disco">
                     <div class="service-content">
                         <h3>Silent Disco Party</h3>
                         <p>Взрывные корпоративы, дни рождения и фестивали со сценариями взаимодействия гостей.</p>
-                        <span style="color: var(--color-neon-yellow); font-weight: bold; margin-top: 1rem; display: inline-block;">Организовать →</span>
+                        <span
+                            style="color: var(--color-neon-yellow); font-weight: bold; margin-top: 1rem; display: inline-block;">Организовать
+                            →</span>
                     </div>
                 </a>
-                
+
                 <a href="#contacts" class="service-card reveal" style="transition-delay: 0.2s;">
-                    <img src="https://images.unsplash.com/photo-1518002171953-a080ee817e1f?q=80&w=2070&auto=format&fit=crop" alt="Ecstatic Dance">
+                    <img src="https://images.unsplash.com/photo-1518002171953-a080ee817e1f?q=80&w=2070&auto=format&fit=crop"
+                        alt="Ecstatic Dance">
                     <div class="service-content">
                         <h3>Ecstatic & Практики</h3>
-                        <p>Идеальная изоляция звука для проводников йоги, медитаций и свободного танца Ecstatic Dance.</p>
-                        <span style="color: var(--color-neon-yellow); font-weight: bold; margin-top: 1rem; display: inline-block;">Узнать больше →</span>
+                        <p>Идеальная изоляция звука для проводников йоги, медитаций и свободного танца Ecstatic Dance.
+                        </p>
+                        <span
+                            style="color: var(--color-neon-yellow); font-weight: bold; margin-top: 1rem; display: inline-block;">Узнать
+                            больше →</span>
                     </div>
                 </a>
 
                 <a href="#contacts" class="service-card reveal" style="transition-delay: 0.3s;">
-                    <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=2070&auto=format&fit=crop" alt="Audio Walks">
+                    <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=2070&auto=format&fit=crop"
+                        alt="Audio Walks">
                     <div class="service-content">
                         <h3>Иммерсивные прогулки</h3>
                         <p>Аудио-экскурсии, квесты по городу и тимбилдинги с полным погружением в историю.</p>
-                        <span style="color: var(--color-neon-yellow); font-weight: bold; margin-top: 1rem; display: inline-block;">Создать маршрут →</span>
+                        <span
+                            style="color: var(--color-neon-yellow); font-weight: bold; margin-top: 1rem; display: inline-block;">Создать
+                            маршрут →</span>
                     </div>
                 </a>
             </div>
@@ -749,22 +859,29 @@
                 </div>
             </div>
 
-            <h2 class="reveal text-center" style="text-align: center;">Что говорят <span class="text-neon">клиенты</span></h2>
-            
+            <h2 class="reveal text-center" style="text-align: center;">Что говорят <span
+                    class="text-neon">клиенты</span></h2>
+
             <div class="grid-3" style="margin-top: 3rem;">
                 <div class="card reveal" style="padding: 2rem;">
                     <div style="color: var(--color-neon-yellow); font-size: 1.2rem; margin-bottom: 1rem;">★★★★★</div>
-                    <p style="color: var(--color-text); font-style: italic; margin-bottom: 1.5rem;">"Это совершенно другой уровень корпоратива. Наши сотрудники разбились на лагеря по цветам каналов и устроили танцевальный баттл. Лучшее, что мы делали за 5 лет!"</p>
+                    <p style="color: var(--color-text); font-style: italic; margin-bottom: 1.5rem;">"Это совершенно
+                        другой уровень корпоратива. Наши сотрудники разбились на лагеря по цветам каналов и устроили
+                        танцевальный баттл. Лучшее, что мы делали за 5 лет!"</p>
                     <div style="font-weight: 600;">Анна, HR Director</div>
                 </div>
                 <div class="card reveal" style="padding: 2rem; transition-delay: 0.1s;">
                     <div style="color: var(--color-neon-yellow); font-size: 1.2rem; margin-bottom: 1rem;">★★★★★</div>
-                    <p style="color: var(--color-text); font-style: italic; margin-bottom: 1.5rem;">"Как организатор Ecstatic Dance, я всегда боролась с акустикой залов. В наушниках люди моментально абстрагируются от соседей и погружаются в процесс."</p>
+                    <p style="color: var(--color-text); font-style: italic; margin-bottom: 1.5rem;">"Как организатор
+                        Ecstatic Dance, я всегда боролась с акустикой залов. В наушниках люди моментально абстрагируются
+                        от соседей и погружаются в процесс."</p>
                     <div style="font-weight: 600;">Елена, Проводник</div>
                 </div>
                 <div class="card reveal" style="padding: 2rem; transition-delay: 0.2s;">
                     <div style="color: var(--color-neon-yellow); font-size: 1.2rem; margin-bottom: 1rem;">★★★★★</div>
-                    <p style="color: var(--color-text); font-style: italic; margin-bottom: 1.5rem;">"Мы устроили вечеринку прямо на пляже отеля вечером. Никому не мешали, слушали глубокий хаус, звук кристальный. Оборудование работало идеально весь вечер."</p>
+                    <p style="color: var(--color-text); font-style: italic; margin-bottom: 1.5rem;">"Мы устроили
+                        вечеринку прямо на пляже отеля вечером. Никому не мешали, слушали глубокий хаус, звук
+                        кристальный. Оборудование работало идеально весь вечер."</p>
                     <div style="font-weight: 600;">Максим, Event-менеджер</div>
                 </div>
             </div>
@@ -774,28 +891,48 @@
     <!-- FAQ -->
     <section id="faq" style="background: var(--color-surface);">
         <div class="container" style="max-width: 800px;">
-            <h2 class="reveal text-center" style="text-align: center; margin-bottom: 4rem;">Частые <span class="text-neon">вопросы</span></h2>
-            
+            <h2 class="reveal text-center" style="text-align: center; margin-bottom: 4rem;">Частые <span
+                    class="text-neon">вопросы</span></h2>
+
             <div class="faq-list reveal">
                 <div class="faq-item">
-                    <div class="faq-question">А наушники не спадут во время активного танца? <span class="faq-icon">+</span></div>
-                    <div class="faq-answer"><p>Они спроектированы специально для активных движений, плотно прилегают к ушам и весят всего около 200 грамм. Даже при Ecstatic Dance они остаются на месте.</p></div>
+                    <div class="faq-question">А наушники не спадут во время активного танца? <span
+                            class="faq-icon">+</span></div>
+                    <div class="faq-answer">
+                        <p>Они спроектированы специально для активных движений, плотно прилегают к ушам и весят всего
+                            около 200 грамм. Даже при Ecstatic Dance они остаются на месте.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">На сколько хватает заряда? <span class="faq-icon">+</span></div>
-                    <div class="faq-answer"><p>Встроенные аккумуляторы обеспечивают до 10-12 часов непрерывного интенсивного звучания. Хватит на вечеринку любой продолжительности от заката до рассвета.</p></div>
+                    <div class="faq-answer">
+                        <p>Встроенные аккумуляторы обеспечивают до 10-12 часов непрерывного интенсивного звучания.
+                            Хватит на вечеринку любой продолжительности от заката до рассвета.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Как далеко пробивает сигнал передатчика? <span class="faq-icon">+</span></div>
-                    <div class="faq-answer"><p>Радиус действия сигнала составляет до 100-150 метров. Вы можете свободно перемещаться по большой территории, уйти к бару или на другой конец локации, не теряя связи с музыкой.</p></div>
+                    <div class="faq-question">Как далеко пробивает сигнал передатчика? <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Радиус действия сигнала составляет до 100-150 метров. Вы можете свободно перемещаться по
+                            большой территории, уйти к бару или на другой конец локации, не теряя связи с музыкой.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Нужен ли интернет для работы? <span class="faq-icon">+</span></div>
-                    <div class="faq-answer"><p>Нет! Система работает по собственному радиоканалу (UHF). Вы можете воспроизводить звук оффлайн откуда угодно: напрямую с DJ-пульта, ноутбука или телефона.</p></div>
+                    <div class="faq-answer">
+                        <p>Нет! Система работает по собственному радиоканалу (UHF). Вы можете воспроизводить звук
+                            оффлайн откуда угодно: напрямую с DJ-пульта, ноутбука или телефона.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Как работает аренда оборудования "под ключ"? <span class="faq-icon">+</span></div>
-                    <div class="faq-answer"><p>Мы привозим заряженные наушники, подключаем наши передатчики к вашим источникам звука (или приглашаем своих диджеев), курируем процесс на площадке и забираем оборудование после окончания. Вы просто наслаждаетесь.</p></div>
+                    <div class="faq-question">Как работает аренда оборудования "под ключ"? <span
+                            class="faq-icon">+</span></div>
+                    <div class="faq-answer">
+                        <p>Мы привозим заряженные наушники, подключаем наши передатчики к вашим источникам звука (или
+                            приглашаем своих диджеев), курируем процесс на площадке и забираем оборудование после
+                            окончания. Вы просто наслаждаетесь.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -803,15 +940,21 @@
 
     <!-- CTA Section -->
     <section id="contacts" class="cta-section">
-        <div class="glow-bg" style="width: 700px; height: 700px; background: var(--color-neon-purple); top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.2;"></div>
+        <div class="glow-bg"
+            style="width: 700px; height: 700px; background: var(--color-neon-purple); top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.2;">
+        </div>
         <div class="container cta-content reveal">
             <h2>Ваше лучшее мероприятие <br><span class="text-neon">начинается здесь</span></h2>
-            <p style="font-size: 1.25rem; margin-bottom: 3rem; color: white;">Свяжитесь с нами, и мы соберем индивидуальную концепцию вашего события под ключ за 24 часа. Свободные даты бронируются быстро.</p>
-            
-            <div style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 400px; margin: 0 auto; background: var(--color-surface); padding: 3rem; border-radius: var(--border-radius); border: var(--border-thin);">
+            <p style="font-size: 1.25rem; margin-bottom: 3rem; color: white;">Свяжитесь с нами, и мы соберем
+                индивидуальную концепцию вашего события под ключ за 24 часа. Свободные даты бронируются быстро.</p>
+
+            <div
+                style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 400px; margin: 0 auto; background: var(--color-surface); padding: 3rem; border-radius: var(--border-radius); border: var(--border-thin);">
                 <a href="tel:+359879367040" class="btn btn-primary" style="width: 100%;">Позвонить: +359 87 936 7040</a>
-                <a href="https://t.me/silentwaveeu" target="_blank" class="btn btn-secondary" style="width: 100%; border-color: rgba(0, 240, 255, 0.3);">Написать в Telegram</a>
-                <a href="mailto:info@silentwave.eu" style="color: var(--color-text-muted); text-decoration: none; margin-top: 1rem;">info@silentwave.eu</a>
+                <a href="https://t.me/silentwaveeu" target="_blank" class="btn btn-secondary"
+                    style="width: 100%; border-color: rgba(0, 240, 255, 0.3);">Написать в Telegram</a>
+                <a href="mailto:info@silentwave.eu"
+                    style="color: var(--color-text-muted); text-decoration: none; margin-top: 1rem;">info@silentwave.eu</a>
             </div>
         </div>
     </section>
@@ -822,7 +965,8 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <a href="#" class="footer-logo">SILENT WAVE</a>
-                    <p style="max-width: 300px; margin-bottom: 1.5rem;">Мы конструируем аудио-пространства, давая людям возможность чувствовать музыку свободно и без ограничений.</p>
+                    <p style="max-width: 300px; margin-bottom: 1.5rem;">Мы конструируем аудио-пространства, давая людям
+                        возможность чувствовать музыку свободно и без ограничений.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Навигация</h4>
@@ -836,9 +980,11 @@
                 <div class="footer-col">
                     <h4>Контакты</h4>
                     <ul class="footer-links">
-                        <li><a href="tel:+359879367040" style="color: white; font-weight: 500;">+359 87 936 7040</a></li>
+                        <li><a href="tel:+359879367040" style="color: white; font-weight: 500;">+359 87 936 7040</a>
+                        </li>
                         <li><a href="mailto:info@silentwave.eu">info@silentwave.eu</a></li>
-                        <li style="margin-top: 1rem;"><a href="https://t.me/silentwaveeu" target="_blank" class="text-neon">Telegram: @silentwaveeu</a></li>
+                        <li style="margin-top: 1rem;"><a href="https://t.me/silentwaveeu" target="_blank"
+                                class="text-neon">Telegram: @silentwaveeu</a></li>
                         <li><a href="#" target="_blank">Instagram</a></li>
                         <li><a href="#" target="_blank">Facebook</a></li>
                     </ul>
@@ -874,7 +1020,7 @@
             const question = item.querySelector('.faq-question');
             question.addEventListener('click', () => {
                 const isActive = item.classList.contains('active');
-                
+
                 // Close all
                 faqItems.forEach(faq => {
                     faq.classList.remove('active');
@@ -892,7 +1038,7 @@
 
         // Reveal Animations on Scroll
         const revealElements = document.querySelectorAll('.reveal');
-        
+
         const revealOptions = {
             threshold: 0.15,
             rootMargin: "0px 0px -50px 0px"
@@ -912,4 +1058,5 @@
         });
     </script>
 </body>
+
 </html>
