@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://delenav1974-hue.github.io/silent-wave/sitemap.xml
