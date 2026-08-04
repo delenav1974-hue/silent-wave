@@ -377,11 +377,15 @@
     /* FLOAT */
     .float{position:fixed;bottom:24px;right:24px;display:flex;gap:10px;z-index:50;opacity:0;transform:translateY(18px);transition:all .4s}
     .float.vis{opacity:1;transform:translateY(0)}
-    .fwa,.ftg{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;text-decoration:none;transition:all .3s}
+    .fwa,.ftg,.fig,.ffb{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;text-decoration:none;transition:all .3s}
     .fwa{background:#25D366;box-shadow:0 6px 22px rgba(37,211,102,.5)}
     .fwa:hover{transform:scale(1.15);box-shadow:0 10px 30px rgba(37,211,102,.7)}
     .ftg{background:#229ED9;box-shadow:0 6px 22px rgba(34,158,217,.5)}
     .ftg:hover{transform:scale(1.15);box-shadow:0 10px 30px rgba(34,158,217,.7)}
+    .fig{background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);box-shadow:0 6px 22px rgba(214,36,159,.5)}
+    .fig:hover{transform:scale(1.15);box-shadow:0 10px 30px rgba(214,36,159,.7)}
+    .ffb{background:#1877F2;box-shadow:0 6px 22px rgba(24,119,242,.5)}
+    .ffb:hover{transform:scale(1.15);box-shadow:0 10px 30px rgba(24,119,242,.7)}
 
     /* ANIMATE */
     .fi{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
@@ -772,8 +776,10 @@
 
 <!-- FLOATING BTNS -->
 <div class="float" id="fl">
-  <a href="https://wa.me/359879367040" target="_blank" rel="noopener" class="fwa" title="WhatsApp">💬</a>
+  <a href="https://facebook.com/silentwaveeu" target="_blank" rel="noopener" class="ffb" title="Facebook">📘</a>
+  <a href="https://www.instagram.com/silentwaveeu/" target="_blank" rel="noopener" class="fig" title="Instagram">📸</a>
   <a href="https://t.me/silentwaveeu" target="_blank" rel="noopener" class="ftg" title="Telegram">✈️</a>
+  <a href="https://wa.me/359879367040" target="_blank" rel="noopener" class="fwa" title="WhatsApp">💬</a>
 </div>
 
 <script>
