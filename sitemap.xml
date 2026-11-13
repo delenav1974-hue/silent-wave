@@ -5,7 +5,7 @@
   <!-- Русская версия (Основная) -->
   <url>
     <loc>https://delenav1974-hue.github.io/silent-wave/</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <!-- Связь с английской версией -->
@@ -17,7 +17,7 @@
   <!-- Английская версия -->
   <url>
     <loc>https://delenav1974-hue.github.io/silent-wave/en.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <!-- Связь с русской версией -->
